@@ -12,7 +12,7 @@ async function seedUsers() {
       name VARCHAR(255) NOT NULL,
       email TEXT NOT NULL UNIQUE,
       password TEXT NOT NULL
-    );
+    ); 
   `;
 
   const insertedUsers = await Promise.all(
@@ -25,9 +25,9 @@ async function seedUsers() {
       `;
     }),
   );
-
   return insertedUsers;
 }
+
 
 async function seedInvoices() {
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
